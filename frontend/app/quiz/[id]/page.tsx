@@ -1154,45 +1154,47 @@ export default function QuizDetailsPage() {
     <div className="min-h-screen bg-amber-50 py-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center mb-6">
+        <div className="mb-6 sm:mb-8">
+          <div className="flex items-center mb-4 sm:mb-6">
             <Link
               href="/quizzes"
-              className="inline-flex items-center text-amber-700 hover:text-amber-900 mr-4 font-medium"
+              className="inline-flex items-center text-amber-700 hover:text-amber-900 mr-4 font-medium text-sm sm:text-base"
             >
-              <ArrowLeft size={20} className="mr-2" />
+              <ArrowLeft size={18} className="mr-2" />
               Back to Quizzes
             </Link>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg border-2 border-amber-200 p-8">
-            <div className="flex items-start justify-between mb-4">
+          <div className="bg-white rounded-2xl shadow-lg border-2 border-amber-200 p-4 sm:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-4">
               <div className="flex-1">
-                <h1 className="text-4xl font-bold text-amber-900 mb-4">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-900 mb-4">
                   {quiz.title}
                 </h1>
-                <div className="flex items-center text-amber-700 mb-6 text-lg">
-                  <FileText size={24} className="mr-3" />
+                <div className="flex items-center text-amber-700 mb-6 text-base sm:text-lg">
+                  <FileText size={20} className="mr-3" />
                   <span className="mr-6">
                     {quiz.questions?.length || 0} questions
                   </span>
-                  <Calendar size={24} className="mr-3" />
+                  <Calendar size={20} className="mr-3" />
                   <span>Created {formatDate(quiz.createdAt!)}</span>
                 </div>
-                <p className="text-amber-800 text-lg">Preview Mode</p>
+                <p className="text-amber-800 text-base sm:text-lg">
+                  Preview Mode
+                </p>
               </div>
 
-              <div className="flex items-center space-x-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
                 <button
                   onClick={startQuiz}
-                  className="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-xl hover:bg-amber-700 transition-colors font-semibold shadow-lg cursor-pointer"
+                  className="inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-amber-600 text-white rounded-xl hover:bg-amber-700 transition-colors font-semibold shadow-lg cursor-pointer text-sm sm:text-base"
                 >
                   <Play size={20} className="mr-2" />
                   Start Quiz
                 </button>
                 <button
                   onClick={startEditing}
-                  className="inline-flex items-center px-6 py-3 bg-amber-200 text-amber-900 rounded-xl hover:bg-amber-300 transition-colors font-semibold shadow-lg cursor-pointer"
+                  className="inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-amber-200 text-amber-900 rounded-xl hover:bg-amber-300 transition-colors font-semibold shadow-lg cursor-pointer text-sm sm:text-base"
                 >
                   <Edit size={20} className="mr-2" />
                   Edit Quiz

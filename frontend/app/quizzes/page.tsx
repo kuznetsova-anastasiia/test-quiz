@@ -202,16 +202,18 @@ export default function QuizzesPage() {
     <div className="min-h-screen bg-amber-50 py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between">
+        <div className="mb-6 sm:mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <h1 className="text-5xl font-bold text-amber-900">Quizzes</h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-amber-900">
+                Quizzes
+              </h1>
             </div>
             <Link
               href="/create"
-              className="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-xl hover:bg-amber-700 transition-colors shadow-lg font-semibold"
+              className="inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-amber-600 text-white rounded-xl hover:bg-amber-700 transition-colors shadow-lg font-semibold text-sm sm:text-base"
             >
-              <Plus size={24} className="mr-2" />
+              <Plus size={20} className="mr-2" />
               Create New Quiz
             </Link>
           </div>
@@ -229,21 +231,21 @@ export default function QuizzesPage() {
             </p>
           </div>
         ) : (
-          <div className="flex flex-wrap gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {quizzes.map(quiz => (
               <div
                 key={quiz.id}
-                className="bg-white rounded-xl border-2 border-amber-200 p-6 hover:shadow-lg transition-shadow cursor-pointer group w-80 flex-shrink-0"
+                className="bg-white rounded-xl border-2 border-amber-200 p-4 sm:p-6 hover:shadow-lg transition-shadow cursor-pointer group"
                 onClick={() => (window.location.href = `/quiz/${quiz.id}`)}
               >
                 <div className="flex flex-col h-full">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-amber-900 mb-2 group-hover:text-amber-700 transition-colors line-clamp-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-amber-900 mb-2 group-hover:text-amber-700 transition-colors line-clamp-2">
                         {quiz.title}
                       </h3>
-                      <div className="flex items-center text-amber-700 text-base">
-                        <FileText size={18} className="mr-2" />
+                      <div className="flex items-center text-amber-700 text-sm sm:text-base">
+                        <FileText size={16} className="mr-2" />
                         <span>{quiz._count?.questions || 0} questions</span>
                       </div>
                     </div>

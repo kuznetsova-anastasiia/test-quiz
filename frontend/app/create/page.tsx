@@ -374,12 +374,12 @@ export default function QuizCreationPage() {
                 Back to Quizzes
               </Link>
             </div>
-            <h1 className="text-4xl font-bold text-amber-900 mb-2">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-900 mb-2">
               Create Quiz
             </h1>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="p-8">
+          <form onSubmit={handleSubmit(onSubmit)} className="p-4 sm:p-8">
             {/* Quiz Title */}
             <div className="mb-10">
               <label className="block text-lg font-semibold text-amber-900 mb-3">
@@ -399,15 +399,15 @@ export default function QuizCreationPage() {
 
             {/* Questions */}
             <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-amber-900">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-amber-900">
                   Questions ({fields.length})
                 </h2>
                 <div className="relative" ref={dropdownRef}>
                   <button
                     type="button"
                     onClick={() => setShowQuestionTypes(!showQuestionTypes)}
-                    className="px-6 py-3 bg-amber-600 text-white rounded-xl hover:bg-amber-700 flex items-center space-x-2 transition-colors shadow-lg cursor-pointer"
+                    className="px-4 sm:px-6 py-3 bg-amber-600 text-white rounded-xl hover:bg-amber-700 flex items-center space-x-2 transition-colors shadow-lg cursor-pointer text-sm sm:text-base"
                   >
                     <Plus size={20} />
                     <span>Add Question</span>
